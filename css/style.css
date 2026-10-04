@@ -1,0 +1,61 @@
+/*Mobile first layout*/
+body{
+    /* Changes body spacing, chooses font and background color*/
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: lightgray;
+}
+
+.container{
+    /* Centers the content and stops it from sterteching to wide*/
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.wrapper{
+    /* Sets display to flex*/
+    display: flex;
+    /*Items stacked verticially*/
+    flex-direction: column;
+    /*Gap between items*/
+    gap: 20px;
+}
+
+.section{
+    /*Background color of cards*/
+    background: white;
+    /*Padding within cards*/
+    padding: 20px;
+    /*Two properties below give cards round edges and shadow*/
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/*Tablet 600px and up*/
+@media (min-width: 600px){
+    body{background: #cfe8ff;} /*Changes background color*/
+
+    .wrapper{
+        /*Switches to row stack*/
+        flex-direction: row;
+        /*Items can wrap to next row*/
+        flex-wrap: wrap;
+        /*Horizontally centers items*/
+        justify-content: center;
+    }
+    .section{width: 45%;} /*Makes cards the same size. 2 columns across*/
+}
+
+/*Desktop 900px and up*/
+@media (min-width: 900px){
+    body{background: #d8ffd8;} /*changes background color*/
+    .section{ width: 30%;} /*Three columns across*/
+}
+
+/* Large desktop 1200px and up*/
+@media (min-width: 1200px){
+    body{background: #ffe0f0;} /*Chnages background color*/
+    .section{width: 22%;} /*Four columns across*/
+}
